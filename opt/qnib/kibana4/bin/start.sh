@@ -10,4 +10,5 @@ if [ "X${ES_URL}" != "X" ];then
    sed -i'' -e "s#elasticsearch_url:.*#elasticsearch_url: \"${ES_URL}\"#" /opt/kibana/config/kibana.yml
 fi
 
+sleep 7
 /opt/kibana4/bin/kibana --config /opt/kibana4/config/kibana.yml

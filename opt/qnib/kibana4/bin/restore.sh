@@ -1,10 +1,12 @@
 #!/bin/bash
+set -ex
 
 source /opt/qnib/consul/etc/bash_functions.sh
 ES_HOST=${ES_HOST-elasticsearch.service.consul}
 cnt=0
 
 wait_for_srv elasticsearch
+sleep 5
 
 kibana_size=$(curl -s http://${ES_HOST}:9200/.kibana/_status|jq '.indices[".kibana"].index.size_in_bytes')
 
