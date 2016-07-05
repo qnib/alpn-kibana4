@@ -23,9 +23,9 @@ ADD opt/qnib/kibana4/bin/restore.sh \
     /opt/qnib/kibana4/bin/
 ADD opt/qnib/kibana4/dumps/ /opt/qnib/kibana4/dumps/
 RUN apk add --update jq bc nodejs \
- && npm install -g n \
- && n stable \
- && npm install elasticdump -g \
  && rm -f /opt/kibana4/node/bin/node \
  && ln -s /usr/bin/node /opt/kibana4/node/bin/node
-ADD etc/supervisord.d/kibana4_restore.ini /etc/supervisord.d/
+#ADD etc/supervisord.d/kibana4_restore.ini /etc/supervisord.d/
+#RUN npm install -g n \
+#  && n stable \
+#  && npm install elasticdump -g
