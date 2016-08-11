@@ -22,6 +22,10 @@ ADD opt/qnib/kibana4/dumps/ /opt/qnib/kibana4/dumps/
 RUN apk add --update jq bc nodejs \
  && rm -f /opt/kibana4/node/bin/node \
  && ln -s /usr/bin/node /opt/kibana4/node/bin/node
+
+# Install https://github.com/elastic/timelion 
+RUN /opt/kibana4/bin/kibana plugin -i elastic/timelion
+
 #ADD etc/supervisord.d/kibana4_restore.ini /etc/supervisord.d/
 #RUN npm install -g n \
 #  && n stable \
