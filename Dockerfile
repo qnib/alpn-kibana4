@@ -26,7 +26,3 @@ RUN apk add --update jq bc nodejs \
 # Install https://github.com/elastic/timelion 
 RUN /opt/kibana4/bin/kibana plugin -i elastic/timelion
 
-#ADD etc/supervisord.d/kibana4_restore.ini /etc/supervisord.d/
-#RUN npm install -g n \
-#  && n stable \
-#  && npm install elasticdump -g
